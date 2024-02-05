@@ -1,0 +1,25 @@
+.env/
+.env
+.venv/
+# env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+pythonenv*
+pyvenv.cfg
+
+.idea
+
+__pycache__
+0001_init.py
+
+# Если используется PostgreSQL, можете добавить следующую строку
+*.dump
+*.sqlite3
+*.log
+
+media
+
+Makefile
+# db.sqlite3-journal
