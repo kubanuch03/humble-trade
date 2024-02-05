@@ -12,4 +12,5 @@ urlpatterns = [
     path("course/list/create/", CourseListCreateAPIView.as_view()),
     path("course/rud/<int:pk>/", CourseRetrieveUpdateDestroyAPIView.as_view()),
     path("course/list/all/", CourseListView.as_view()),
+    path("course/detail/<int:pk>/", CourseListView.as_view()),
 ]
