@@ -1,6 +1,9 @@
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from rest_framework import permissions, generics
 from rest_framework.viewsets import ModelViewSet
+from django.http import JsonResponse
+from django.views import View
+from .models import Lesson
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.generics import ListAPIView, RetrieveAPIView
@@ -137,6 +140,23 @@ class UnitDetailView(ListAPIView):
     permission_classes = [
         IsAuthenticated,
     ]
+
+
+class UnitLessonsView(View):
+    def get(self, request, unit_id, *args, **kwargs):
+        try:
+            lessons = Lesson.objects.filter(unit_id=unit_id)
+            lesson_data = []
+            for lesson in lessons:
+                lesson_data.append({
+                    'title': lesson.title,
+                    'image_url': lesson.image.url,
+                    'instructor_username': lesson.instructor.username if lesson.instructor else None,
+                    'url': lesson.url,
+                })
+            return JsonResponse({'lessons': lesson_data})
+        except Unit.DoesNotExist:
+            return JsonResponse({'error': 'Unit does not exist'}, status=404)
 
 "============Unit=========================================="
 

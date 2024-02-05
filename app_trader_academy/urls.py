@@ -17,6 +17,8 @@ router.register(
 
 urlpatterns = [
     path("", include(router.urls)),
+    path('unit/lessons/<int:unit_id>/', UnitLessonsView.as_view(), name='unit_lessons'),
+ 
     path("lesson/<int:unit_id>/", LessonAPIView.as_view()),
     path("unit/<int:unit_id>/", UnitDetailView.as_view()),
     path("unit/list/<int:unit_id>/", UnitListView.as_view()),
