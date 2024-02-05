@@ -86,3 +86,10 @@ class CourseListView(generics.ListAPIView):
     serializer_class = VideoCourseSerializer
     pagination_class = CustomPageNumberPagination
     permission_classes = [permissions.IsAuthenticated, ]
+
+
+class CourseDetailView(generics.RetrieveAPIView):
+    queryset = Courses.objects.all()
+    serializer_class = VideoCourseSerializer
+    pagination_class = CustomPageNumberPagination
+    permission_classes = [permissions.IsAuthenticated, ]
