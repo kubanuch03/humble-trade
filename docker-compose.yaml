@@ -7,20 +7,24 @@ services:
       dockerfile: Dockerfile
     command: bash entrypoint.sh
     volumes:
-      - .:/app
+      - .:/usr/src/app/
+      - static_volume:/usr/src/app/static
+      - media_volume:/usr/src/app/media
     ports:
-      - 8000:8000
+      - 8080:8000
     depends_on:
       - db
       - redis
       - celery-worker
       - celery-beat
+
   db:
     image: postgres:14-alpine
     env_file:
       - .env
     volumes:
       - dbdata:/var/lib/postgresql/data
+
   redis:
     image: "redis:alpine"
 
@@ -30,32 +34,33 @@ services:
       dockerfile: Dockerfile
     command: celery -A config worker --loglevel=info
     volumes:
-      - .:/app
+      - .:/usr/src/app/
     depends_on:
       - redis
       - db
+
   celery-beat:
     build:
       context: .
       dockerfile: Dockerfile
     command: celery -A config beat --loglevel=info
     volumes:
-      - .:/app
+      - .:/usr/src/app/
     depends_on:
       - redis
       - db
 
   nginx:
-     build:
-       context: .
-       dockerfile: nginx/Dockerfile
-     ports:
-       - "80:80"
-     volumes:
-       - static_volume:/app/static
-       - media_volume:/app/media
-     depends_on:
-       - web
+    build:
+      context: .
+      dockerfile: nginx/Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - static_volume:/usr/src/app/static
+      - media_volume:/usr/src/app/media
+    depends_on:
+      - web
 
 volumes:
   dbdata:
