@@ -9,7 +9,7 @@ class TraderCourseSerializer(serializers.ModelSerializer):
     image = serializers.ImageField(required=True)
     class Meta:
         model = Unit
-        fields = ['title','image']
+        fields = ['id','title','image']
 
 
 class AnswerSerializer(serializers.ModelSerializer):

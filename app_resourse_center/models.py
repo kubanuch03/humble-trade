@@ -5,7 +5,7 @@ from transliterate import slugify
 
 class Category(models.Model):
     title = models.CharField(max_length=250,unique=True)
-    image = models.ImageField(upload_to='resourse/category')
+    image = models.ImageField(upload_to='resourse/category/')
 
     
 
@@ -15,7 +15,7 @@ class Category(models.Model):
 
 class Document(models.Model):
     title = models.CharField(max_length=250)
-    image = models.ImageField('resourse/document')
+    image = models.ImageField('resourse/document/')
     post = models.FileField()
     url = models.URLField()
     description = models.CharField(max_length=250)

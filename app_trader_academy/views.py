@@ -18,6 +18,10 @@ from django.shortcuts import get_object_or_404
 from django.views import View
 import logging
 
+from django.http import JsonResponse
+from django.views import View
+from .models import Lesson
+
 logger = logging.getLogger(__name__)
 
 from drf_spectacular.utils import extend_schema
@@ -123,12 +127,7 @@ class UnitViewSet(ModelViewSet):
     ]
 
 
-class UnitListView(RetrieveAPIView):
-    queryset = Unit.objects.all()
-    serializer_class = TraderCourseSerializer
-    permission_classes = [
-        IsAuthenticated,
-    ]
+
 
 
 class UnitDetailView(ListAPIView):
@@ -149,27 +148,29 @@ class LessonViewSet(ModelViewSet):
     ]
 
 
-class LessonAPIView(generics.ListAPIView):
-    serializer_class = LessonSerializer
-    swagger_fake_view = True
 
-    permission_classes = [
-        IsAuthenticated,
-    ]
 
-    def get_queryset(self):
+
+class UnitLessonsListView(ListAPIView):
+    queryset = Unit.objects.all()
+    serializer_class = TraderCourseSerializer
+    permission_classes = [permissions.AllowAny, ]
+
+    def get(self, request, unit_id, *args, **kwargs):
         try:
-            unit_id = self.kwargs["unit_id"]
-            return Lesson.objects.filter(unit_id=unit_id)
-        except Lesson.DoesNotExist:
-            return Lesson.objects.none()
-        except Exception as e:
-            logger.error(f"Error in LessonAPIView : {e}")
-            return Lesson.objects.none()
-
-    queryset = Lesson.objects.none()
-
-
+            lessons = Lesson.objects.filter(unit_id=unit_id)
+            lesson_data = []
+            for lesson in lessons:
+                lesson_data.append({
+                    'title': lesson.title,
+                    'image_url': lesson.image.url,
+                    'instructor_uername': lesson.instructor.username if lesson.instructor else None,
+                    'url': lesson.url,
+                })
+            return Response({'lessons': lesson_data})
+        except Unit.DoesNotExist:
+            return Response({'error': 'Unit does not exist'}, status=404)
+        
 "=============Lesson========================================="
 
 

@@ -15,13 +15,14 @@ router.register(
 )
 
 
+
 urlpatterns = [
     path("", include(router.urls)),
-    path("lesson/<int:unit_id>/", LessonAPIView.as_view()),
     path("unit/<int:unit_id>/", UnitDetailView.as_view()),
-    path("unit/list/<int:unit_id>/", UnitListView.as_view()),
+    
 
     path("download/<int:pk>/", DownloadDocumentView.as_view(), name="download-file"),
+    path('unit/lessons/<int:unit_id>/', UnitLessonsListView.as_view(), name='unit_lessons'),
 
 
 

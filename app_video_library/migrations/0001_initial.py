@@ -7,13 +7,11 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
     initial = True
 
-    dependencies = [
-        ("app_resourse_center", "0001_initial"),
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name="CommentCourse",
+            name="Category",
             fields=[
                 (
                     "id",
@@ -24,12 +22,13 @@ class Migration(migrations.Migration):
                         verbose_name="ID",
                     ),
                 ),
-                ("body", models.TextField()),
-                ("created_at", models.DateTimeField(auto_now_add=True)),
+                ("title", models.CharField(max_length=250)),
+                ("description", models.CharField(max_length=255)),
+                ("image", models.ImageField(upload_to="video_library/category/")),
             ],
         ),
         migrations.CreateModel(
-            name="CommentDocument",
+            name="Courses",
             fields=[
                 (
                     "id",
@@ -40,13 +39,15 @@ class Migration(migrations.Migration):
                         verbose_name="ID",
                     ),
                 ),
-                ("body", models.TextField()),
+                ("title", models.CharField(max_length=250)),
+                ("image", models.ImageField(upload_to="video_library/course/")),
+                ("url", models.URLField()),
                 ("created_at", models.DateTimeField(auto_now_add=True)),
                 (
-                    "post",
+                    "category",
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.CASCADE,
-                        to="app_resourse_center.document",
+                        to="app_video_library.category",
                     ),
                 ),
             ],
