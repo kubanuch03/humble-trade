@@ -11,7 +11,7 @@ services:
       - static_volume:/usr/src/app/static
       - media_volume:/usr/src/app/media
     ports:
-      - 8080:8000
+      - 8000:8000
     depends_on:
       - db
       - redis
@@ -55,7 +55,7 @@ services:
       context: .
       dockerfile: nginx/Dockerfile
     ports:
-      - "8000:8000"
+      - "8080:80"
     volumes:
       - static_volume:/usr/src/app/static
       - media_volume:/usr/src/app/media
