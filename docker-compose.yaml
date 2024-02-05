@@ -55,7 +55,11 @@ services:
       context: .
       dockerfile: nginx/Dockerfile
     ports:
+<<<<<<< HEAD
       - "8080:80"
+=======
+      - "80:80"
+>>>>>>> 818ba2e02e96ca2dab071502c8f5d7e2a5b96dfe
     volumes:
       - static_volume:/usr/src/app/static
       - media_volume:/usr/src/app/media
