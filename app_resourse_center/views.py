@@ -48,8 +48,8 @@ class CategoryDetailApiView(generics.RetrieveAPIView):
     permission_classes = [permissions.IsAdminUser]
     serializer_class = CategorySerializers
 
-  
-    
+
+
 
 
 class CategoryDeleteApiView(APIView):

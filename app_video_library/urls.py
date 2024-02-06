@@ -8,7 +8,7 @@ router.register(r"category", CategoryViewSet, basename="category")
 # router.register(r"courses", CourseViewSet, basename="courses")
 
 urlpatterns = [
-    path("", include(router.urls)), 
+    path("", include(router.urls)),
     path("course/list/create/", CourseListCreateAPIView.as_view()),
     path("course/rud/<int:pk>/", CourseRetrieveUpdateDestroyAPIView.as_view()),
     path("course/list/all/", CourseListView.as_view()),

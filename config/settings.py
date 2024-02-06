@@ -28,7 +28,7 @@ SECRET_KEY = config("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config("DEBUG")
 
-ALLOWED_HOSTS = ["*", "db"]
+ALLOWED_HOSTS = ["*", "db",]
 
 
 # Application definition
@@ -74,7 +74,7 @@ MIDDLEWARE = [
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework_simplejwt.authentication.JWTAuthentication",
-    ),    
+    ),
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
     "DEFAULT_FILTER_BACKENDS": ["django_filters.rest_framework.DjangoFilterBackend"],
 }
@@ -85,7 +85,7 @@ ROOT_URLCONF = "config.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR.joinpath('templates')],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -119,7 +119,7 @@ DATABASES = {
 #         "NAME": BASE_DIR / "db.sqlite3",
 #     }
 # }
-    
+
 # # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
@@ -155,10 +155,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = "/static/"
-STATIC_ROOT = BASE_DIR / "static"
+STATIC_ROOT = "/usr/src/app/static"
 
 MEDIA_URL = "/media/"
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_ROOT = "/usr/src/app/media"
 
 
 AUTH_USER_MODEL = "app_users.CustomUser"
@@ -181,13 +181,18 @@ CORS_ALLOW_METHODS = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    config("CORS_AWS"),
+    "http://3.143.210.222",
     "http://localhost:3000",
+    "https://dev.d1bfpcy724oex4.amplifyapp.com",
+    "https://dev.d1bfpcy724oex4.amplifyapp",
+    "https://dev.d1bfpcy724oex4",
+    "https://d1bfpcy724oex4",
 ]
 
 CORS_ALLOW_ORIGINS = [
+    "*",
+    "http://3.143.210.222",
     "http://localhost:3000",
-    config("CORS_AWS"),
 ]
 CORS_ALLOW_HEADERS = [
     "accept",

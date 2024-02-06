@@ -3,8 +3,8 @@ from .views import *
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
-router.register(r"unit", UnitViewSet, basename="course_crud")
-router.register(r"lesson", LessonViewSet, basename="lesson_crud")
+
+
 router.register(
     r"strategy/course", StrategyCourseViewSet, basename="6 sessistrategy crush course"
 )
@@ -18,8 +18,14 @@ router.register(
 
 urlpatterns = [
     path("", include(router.urls)),
-    path("unit/<int:unit_id>/", UnitDetailView.as_view()),
-    
+
+    path('lesson/list/', LessonListApiView.as_view(),name='trader-lesson-list'),
+    path('lesson/create/', LessonCreateApiView.as_view(),name='trader-lesson-create'),
+    path('lesson/rud/<int:pk>/', LessonRUDApiView.as_view(),name='trader-lesson-rud'),
+
+    path("unit/create/", UnitCreateView.as_view(),name='unit-create'),
+    path("unit/list/", UnitListView.as_view()),
+    path("unit/rud/<int:pk>/", UnitRUDView.as_view(),name='unit-rud'),
 
     path("download/<int:pk>/", DownloadDocumentView.as_view(), name="download-file"),
     path('unit/lessons/<int:unit_id>/', UnitLessonsListView.as_view(), name='unit_lessons'),

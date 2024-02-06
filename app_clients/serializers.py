@@ -1,10 +1,13 @@
 from decouple import config
 
+from django.core.mail import EmailMultiAlternatives
+from django.template.loader import render_to_string
 from django.contrib.auth.hashers import make_password
 from django.contrib.sites.shortcuts import get_current_site
 from django.core.mail import send_mail
 from django.urls import reverse
 from django.utils.crypto import get_random_string
+from django.utils.html import strip_tags
 
 from rest_framework import serializers
 from .models import Client
@@ -54,12 +57,27 @@ class ClientSerializer(serializers.ModelSerializer):
             "clients:confirm_email", kwargs={"token": client.token_auth}
         )
 
+
+
         subject = "Подтверждение почты"
-        message = f"""Подтвердите почту по ссылке: \n\n{protocol}://{domain}{confirmation_link}\nВаши данные:\n почта: {client.email}\n пароль: {validated_data["password"]}
-"""
-        from_email = config("EMAIL_HOST_USER")
-        to_email = validated_data["email"]
-        send_mail(subject, message, from_email, [to_email], fail_silently=False)
+
+        # message = f"""Подтвердите почту по ссылке: \n\n{protocol}://{domain}{confirmation_link}\nВаши данные:\n почта: {client.email}\n пароль: {validated_data["password"]}"""
+        html_message = render_to_string('app_clients/confirm_email.html', {
+                    'protocol': protocol,
+                    'domain': domain,
+                    'confirmation_link': confirmation_link,
+                    'client_email': client.email,
+                    'client_password': validated_data["password"],
+                })
+        text_message = strip_tags(html_message)
+
+        # from_email = config("EMAIL_HOST_USER")
+        # to_email = validated_data["email"]
+        # send_mail(subject, html_message, from_email, [to_email], fail_silently=False)
+
+        email = EmailMultiAlternatives(subject, text_message, from_email=config("EMAIL_HOST_USER"), to=[validated_data["email"]])
+        email.attach_alternative(html_message, "text/html")  # Установите альтернативный контент как HTML
+        email.send()
         make_password(validated_data["password"])
 
         return client

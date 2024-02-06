@@ -6,6 +6,7 @@ from django.db.models import Max
 
 
 class TraderCourseSerializer(serializers.ModelSerializer):
+    id = serializers.IntegerField(read_only=True)
     image = serializers.ImageField(required=True)
     class Meta:
         model = Unit
@@ -65,7 +66,7 @@ class QuestionSerializer(serializers.ModelSerializer):
 class LessonSerializer(serializers.ModelSerializer):
     class Meta:
         model = Lesson
-        fields = "__all__"
+        fields = ['id','unit','title','image','url']
 
 
 class StrategyCourseSerializer(serializers.ModelSerializer):

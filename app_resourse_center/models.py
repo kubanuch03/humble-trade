@@ -7,7 +7,7 @@ class Category(models.Model):
     title = models.CharField(max_length=250,unique=True)
     image = models.ImageField(upload_to='resourse/category/')
 
-    
+
 
     def __str__(self):
         return self.title

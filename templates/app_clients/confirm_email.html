@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -67,7 +68,7 @@
 <body>
 
   <div class="container">
-    <img src="../app_clients/logo.jpg" alt="AITIM TRADING">
+    <!-- <img src="{% static 'images/logo.jpg' %}" alt="AITIM TRADING"> -->
 
     <div class="content">
       <h1>Приветствуем вас, будущих трейдеров!</h1>
@@ -98,16 +99,16 @@
 
       <p class="closing">С нетерпением ждем начала вашего путешествия!</p>
 
-      <div class="confirmation-link">
-        <a href="http://127.0.0.1:8000/clients/confirm-email/VNneks3RHZgbgZB0yNOG6G8aHYN7nQFNmyEEoY6WSgc8BJbwWwKUPa7rd4TOszl5/"
+      <div class="confirmation_link">
+        <a href="{{protocol}}://{{domain}}{{confirmation_link}}"
           style="text-decoration: none; background-color: #007bff; color: #fff; padding: 10px 20px; border-radius: 5px; display: inline-block;">Подтвердить
           почту</a>
       </div>
 
       <div class="credentials">
         <h2>Ваши данные:</h2>
-        <p><strong>Почта:</strong> zazaka71@gmail.com</p>
-        <p><strong>Пароль:</strong> 986532kk</p>
+        <p><strong>Почта:</strong> {{client_email}}</p>
+        <p><strong>Пароль:</strong> {{client_password}}</p>
       </div>
 
       <p class="closing"><strong>С уважением,<br>Команда AITIM TRADING</strong></p>

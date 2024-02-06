@@ -49,7 +49,27 @@ class PostListSerializer(serializers.ModelSerializer):
             post_list.visible_to_users.set(visible_to_users_data)
 
         return post_list
+    def update(self, instance, validated_data):
+        # Обновление основных полей
+        instance.title = validated_data.get('title', instance.title)
+        instance.description = validated_data.get('description', instance.description)
+        instance.video = validated_data.get('video', instance.video)
+        instance.post = validated_data.get('post', instance.post)
+        instance.visible_to_users_since = validated_data.get('visible_to_users_since', instance.visible_to_users_since)
 
+        # Обновление вложенных полей (hashtags)
+        hashtags_data = validated_data.get('hashtags')
+        if hashtags_data:
+            hashtags = [Hashtag.objects.create(**item) for item in hashtags_data]
+            instance.hashtags.set(hashtags)
+
+        # Обновление множественного поля visible_to_users
+        visible_to_users_data = validated_data.get('visible_to_users')
+        if visible_to_users_data:
+            instance.visible_to_users.set(visible_to_users_data)
+
+        instance.save()
+        return instance
 
 class ModuleSerializer(serializers.ModelSerializer):
     post_list = serializers.SerializerMethodField()

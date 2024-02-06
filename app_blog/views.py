@@ -27,7 +27,7 @@ class PostListCreateView(generics.ListCreateAPIView):
     serializer_class = PostSerializer
     permission_classes = [IsModeratorOrReadOnly, permissions.IsAuthenticated]
 
-   
+
 
     @extend_schema(
         summary="List a  blog post list",
@@ -49,7 +49,7 @@ class PostListCreateView(generics.ListCreateAPIView):
     def create(self, request, *args, **kwargs):
         title = request.data.get('title', '')
         slug = slugify(title)
-        
+
         if Post.objects.filter(slug=slug).exists():
             return Response({'error': 'Title с таким заголовком уже существует Выберите другое название'}, status=status.HTTP_400_BAD_REQUEST)
 

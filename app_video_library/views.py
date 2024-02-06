@@ -30,12 +30,12 @@ class CategoryViewSet(ModelViewSet):
     def retrieve(self, request, *args, **kwargs):
         instance = self.get_object()
         courses = Courses.objects.filter(category=instance)
-        category_data = CategorySerializer(instance).data 
+        category_data = CategorySerializer(instance).data
         course_data = VideoCourseSerializer(courses, many=True).data
 
         response_data = {
             "category": {
-                "id": instance.id, 
+                "id": instance.id,
                 "title": category_data['title'],
                 "image": category_data['image'],
                 "description": category_data['description']

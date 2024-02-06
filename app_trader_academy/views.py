@@ -6,13 +6,7 @@ from rest_framework import status
 from rest_framework.generics import ListAPIView, RetrieveAPIView
 
 from .models import Unit, Lesson, StrategyCourse, StrategyLesson, Question, Answer
-from .seriallizer import (
-    TraderCourseSerializer,
-    LessonSerializer,
-    StrategyCourseSerializer,
-    StrategyLessonSerializer,
-    QuestionSerializer,
-)
+from .serializers import *
 from django.http import FileResponse, Http404
 from django.shortcuts import get_object_or_404
 from django.views import View
@@ -117,9 +111,13 @@ class QuestionRUDView(generics.RetrieveUpdateDestroyAPIView):
 
 
 # ===================================================================
+class UnitCreateView(generics.CreateAPIView):
+    queryset = Unit.objects.all()
+    serializer_class = TraderCourseSerializer
+    permission_classes = [IsAdminUser,]
 
 
-class UnitViewSet(ModelViewSet):
+class UnitRUDView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Unit.objects.all()
     serializer_class = TraderCourseSerializer
     permission_classes = [
@@ -127,34 +125,37 @@ class UnitViewSet(ModelViewSet):
     ]
 
 
-
-
-
-class UnitDetailView(ListAPIView):
+class UnitListView(generics.ListAPIView):
     queryset = Unit.objects.all()
     serializer_class = TraderCourseSerializer
-    permission_classes = [
-        IsAuthenticated,
-    ]
+    permission_classes = [IsAuthenticated,]
+
+
 
 "============Unit=========================================="
 
 
-class LessonViewSet(ModelViewSet):
+
+class LessonListApiView(generics.ListAPIView):
     queryset = Lesson.objects.all()
     serializer_class = LessonSerializer
-    permission_classes = [
-        IsAdminUser,
-    ]
+    permission_classes = [permissions.IsAuthenticated]
 
+class LessonCreateApiView(generics.CreateAPIView):
+    queryset = Lesson.objects.all()
+    serializer_class = LessonSerializer
+    permission_classes = [permissions.IsAuthenticated]
 
-
+class LessonRUDApiView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Lesson.objects.all()
+    serializer_class = LessonSerializer
+    permission_classes = [permissions.IsAdminUser]
 
 
 class UnitLessonsListView(ListAPIView):
     queryset = Unit.objects.all()
     serializer_class = TraderCourseSerializer
-    permission_classes = [permissions.AllowAny, ]
+    permission_classes = [permissions.IsAuthenticated, ]
 
     def get(self, request, unit_id, *args, **kwargs):
         try:
@@ -162,6 +163,7 @@ class UnitLessonsListView(ListAPIView):
             lesson_data = []
             for lesson in lessons:
                 lesson_data.append({
+                    'id': lesson.id,
                     'title': lesson.title,
                     'image_url': lesson.image.url,
                     'instructor_uername': lesson.instructor.username if lesson.instructor else None,
@@ -170,7 +172,7 @@ class UnitLessonsListView(ListAPIView):
             return Response({'lessons': lesson_data})
         except Unit.DoesNotExist:
             return Response({'error': 'Unit does not exist'}, status=404)
-        
+
 "=============Lesson========================================="
 
 

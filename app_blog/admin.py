@@ -13,7 +13,7 @@ class PostListAdmin(admin.ModelAdmin):
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
-    list_display = ("title", "date_created")
+    list_display = ("id","title", "date_created")
     prepopulated_fields = {"slug": ("title",)}  # автоматически заполнять slug из title
     search_fields = ("title", "content")  # добавление поля поиска
 
