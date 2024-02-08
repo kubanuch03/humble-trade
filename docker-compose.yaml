@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     command: bash entrypoint.sh
     volumes:
-      - .:/usr/src/app/
+      - .:/app
       - static_volume:/usr/src/app/static
       - media_volume:/usr/src/app/media
     ports:

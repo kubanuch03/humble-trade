@@ -11,7 +11,7 @@ class ClientAdmin(admin.ModelAdmin):
         "phone_number",
         "created_at",
     )
-    search_fields = ("username", "email", "phone_number", "created_at")
+    search_fields = ("username", "email", "phone_number", "created_at","token_auth")
     list_filter = ("is_staff", "created_at")
 
     fieldsets = (
@@ -25,6 +25,7 @@ class ClientAdmin(admin.ModelAdmin):
                     "phone_number",
                     "bio",
                     "avatar",
+                    "token_auth"
                 )
             },
         ),

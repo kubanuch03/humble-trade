@@ -4,6 +4,9 @@ from .serializers import CommentSerializer
 from rest_framework.permissions import IsAuthenticated,IsAdminUser
 
 
+
+#User
+
 class CommentListCreateView(generics.ListCreateAPIView):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
@@ -22,6 +25,15 @@ class CommentListCreateView(generics.ListCreateAPIView):
             raise ValueError("Invalid user or missing associated Client.")
 
 
+class CommentDetailView(generics.RetrieveAPIView):
+    queryset = Comment.objects.all()
+    serializer_class = CommentSerializer
+    permission_classes = [IsAuthenticated]
+
+
+
+
+#Admin
 class CommentRUDView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer

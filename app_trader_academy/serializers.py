@@ -4,6 +4,8 @@ from .models import *
 from rest_framework import serializers
 from django.db.models import Max
 
+from drf_spectacular.utils import extend_schema_field
+
 
 class TraderCourseSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField(read_only=True)
@@ -17,6 +19,7 @@ class AnswerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Answer
         fields = [
+            "id",
             "answer_number",
             "answer_text",
         ]
@@ -66,16 +69,35 @@ class QuestionSerializer(serializers.ModelSerializer):
 class LessonSerializer(serializers.ModelSerializer):
     class Meta:
         model = Lesson
-        fields = ['id','unit','title','image','url']
+        fields = ['id','unit','title','image','url',]
+
+    @extend_schema_field(str)
+    def get_post_title(self, obj):
+        return obj.post.title if obj.post else None
+
+    
+
+        
+
+    # def update(self, instance, validated_data):
+    #     # Обновление основных полей
+    #     instance.title = validated_data.get('title', instance.title)
+    #     instance.image = validated_data.get('image', instance.image)
+    #     instance.url = validated_data.get('url', instance.url)
+    #     instance.unit = validated_data.get('unit', instance.unit)
+
+
+    #     instance.save()
+    #     return instance
 
 
 class StrategyCourseSerializer(serializers.ModelSerializer):
     class Meta:
         model = StrategyCourse
-        fields = "__all__"
+        fields = ['id','title','image']
 
 
 class StrategyLessonSerializer(serializers.ModelSerializer):
     class Meta:
         model = StrategyLesson
-        fields = "__all__"
+        fields =  ['id','title','course','instructor','image']

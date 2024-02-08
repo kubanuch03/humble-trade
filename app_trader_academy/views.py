@@ -7,6 +7,7 @@ from rest_framework.generics import ListAPIView, RetrieveAPIView
 
 from .models import Unit, Lesson, StrategyCourse, StrategyLesson, Question, Answer
 from .serializers import *
+from app_clients.serializers import ClientSerializer
 from django.http import FileResponse, Http404
 from django.shortcuts import get_object_or_404
 from django.views import View
@@ -141,6 +142,8 @@ class LessonListApiView(generics.ListAPIView):
     serializer_class = LessonSerializer
     permission_classes = [permissions.IsAuthenticated]
 
+
+
 class LessonCreateApiView(generics.CreateAPIView):
     queryset = Lesson.objects.all()
     serializer_class = LessonSerializer
@@ -150,6 +153,11 @@ class LessonRUDApiView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Lesson.objects.all()
     serializer_class = LessonSerializer
     permission_classes = [permissions.IsAdminUser]
+
+class LessonDeatailApiView(generics.RetrieveAPIView):
+    queryset = Lesson.objects.all()
+    serializer_class = LessonSerializer
+    permission_classes = [permissions.IsAuthenticated]
 
 
 class UnitLessonsListView(ListAPIView):
@@ -200,9 +208,7 @@ class StrategyCourseViewSet(ModelViewSet):
 class StrategyCourseListView(ListAPIView):
     queryset = StrategyCourse.objects.all()
     serializer_class = StrategyCourseSerializer
-    permission_classes = [
-        IsAuthenticated,
-    ]
+    permission_classes = [IsAuthenticated,]
 
 
 "================StrategyCourse==================================="

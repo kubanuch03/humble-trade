@@ -141,6 +141,8 @@ class DocumetPutApiView(APIView):
 
 
 class DownloadFileView(View):
+    permission_classes = [permissions.IsAuthenticated]
+
     def get(self, request, pk):
         document = get_object_or_404(Document, pk=pk)
         if not document.post:
@@ -148,5 +150,3 @@ class DownloadFileView(View):
         response = FileResponse(document.post, as_attachment=True)
         response["Content-Disposition"] = f"attachment; filename={document.post.name}"
         return response
-
-    permission_classes = [permissions.IsAuthenticated]

@@ -13,25 +13,15 @@ logger = logging.getLogger(__name__)
 
 
 
-class CommentListCreateView(generics.ListCreateAPIView):
+class CommentsListCreateView(generics.ListCreateAPIView):
     queryset = CommentCourse.objects.all()
     serializer_class = CommentCourseSerializer
     permission_classes = [permissions.IsAuthenticated]
 
-    def get_queryset(self):
-        post_list_id = self.kwargs["post_list_id"]
-        return CommentCourse.objects.filter(post__id=post_list_id)
-
-    def perform_create(self, serializer):
-        user = self.request.user
-
-        if user.is_authenticated and hasattr(user, 'client'):
-            serializer.save(user=user.client)
-        else:
-            raise ValueError("Invalid user or missing associated Client.")
+    
 
 
-class CommentRUDView(generics.RetrieveUpdateDestroyAPIView):
+class CommentsRUDView(generics.RetrieveUpdateDestroyAPIView):
     queryset = CommentCourse.objects.all()
     serializer_class = CommentCourseSerializer
     permission_classes = [permissions.IsAdminUser]
@@ -42,6 +32,9 @@ class CommentsDocumentViewSet(ModelViewSet):
     queryset = CommentDocument.objects.all()
     serializer_class = CommentDocumentSerializer
     permission_classes = [permissions.IsAuthenticated]
+
+
+
 
 
 class CommentsDocumentAPIView(generics.ListAPIView):

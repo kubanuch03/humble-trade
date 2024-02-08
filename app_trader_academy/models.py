@@ -17,6 +17,7 @@ class Lesson(models.Model):
     image = models.ImageField(upload_to="trader_academy/lesson/")
     instructor = models.ForeignKey(Client, on_delete=models.PROTECT,blank=True,null=True)
     url = models.URLField()
+    
     #question = models.ForeignKey(
     #    "Question", on_delete=models.CASCADE, related_name="questions",null=True,blank=True
     #)

@@ -19,21 +19,24 @@ router.register(
 urlpatterns = [
     path("", include(router.urls)),
 
+    # Lesson
     path('lesson/list/', LessonListApiView.as_view(),name='trader-lesson-list'),
+    path('lesson/detail/<int:pk>/', LessonDeatailApiView.as_view(),name='trader-lesson-detail'),
     path('lesson/create/', LessonCreateApiView.as_view(),name='trader-lesson-create'),
     path('lesson/rud/<int:pk>/', LessonRUDApiView.as_view(),name='trader-lesson-rud'),
 
+    path("download/<int:pk>/", DownloadDocumentView.as_view(), name="download-file"),
+
+
+    #Unit
     path("unit/create/", UnitCreateView.as_view(),name='unit-create'),
     path("unit/list/", UnitListView.as_view()),
     path("unit/rud/<int:pk>/", UnitRUDView.as_view(),name='unit-rud'),
-
-    path("download/<int:pk>/", DownloadDocumentView.as_view(), name="download-file"),
     path('unit/lessons/<int:unit_id>/', UnitLessonsListView.as_view(), name='unit_lessons'),
 
 
-
-    path(
-        "questions/create/lesson/",
+    # Question
+    path("questions/create/lesson/",
         QuestionListCreateView.as_view(),
         name="question-admin-list-create-lesson",
     ),

@@ -5,7 +5,7 @@ from app_clients.models import Client
 
 
 class CommentCourseSerializer(serializers.ModelSerializer):
-    user = serializers.StringRelatedField()
+    # user = serializers.StringRelatedField()
     avatar_url = serializers.SerializerMethodField()
 
     # @extend_schema_field(str)

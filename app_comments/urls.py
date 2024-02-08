@@ -16,18 +16,11 @@ router.register(
 
 urlpatterns = [
     path("", include(router.urls)),
-    path("video/library/create/list/comment/",CommentListCreateView.as_view()),
-    path("video/library/rud/comment/<int:pk>/",CommentRUDView.as_view()),
+    path("video/library/create/list/comment/",CommentsListCreateView.as_view()),
+    path("video/library/rud/comment/<int:pk>/",CommentsRUDView.as_view()),
 
 
-    path(
-        "document/comments/<int:document_id>/",
-        CommentsDocumentAPIView.as_view(),
-        name="comment_defined_documents",
-    ),
-    path(
-        "course/comments/<int:course_id>/",
-        CommentsCourseAPIView.as_view(),
-        name="comment_defined_course",
-    ),
+    path("document/comments/<int:document_id>/",CommentsDocumentAPIView.as_view(),name="comment_defined_documents",),
+    
+    path("course/comments/<int:course_id>/",CommentsCourseAPIView.as_view(),name="comment_defined_course",),
 ]
