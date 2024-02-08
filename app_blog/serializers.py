@@ -20,7 +20,7 @@ class HashtagSerializer(serializers.ModelSerializer):
 
 #========= Post List ================================================================
 class PostListSerializer(serializers.ModelSerializer):
-   
+    hashtags = serializers.PrimaryKeyRelatedField(queryset=Hashtag.objects.all(), many=True)
 
     class Meta:
         model = Post_list
@@ -50,13 +50,22 @@ class PostListSerializer(serializers.ModelSerializer):
 
         if user_data:
             post_list.user.set(user_data)
-       
-       
 
         return post_list
+       
+    def to_representation(self, instance):
+        representation = super().to_representation(instance)
+        hashtags = instance.hashtags.all() if hasattr(instance, 'hashtags') else []
+        representation['hashtags'] = [
+            {
+                'id': hashtag.id,
+                'name': hashtag.name
+            } for hashtag in hashtags
+        ]
+        return representation       
     
     def update(self, instance, validated_data):
-        hashtags_data = validated_data.get("hashtags")
+        hashtags_data = validated_data.pop("hashtags",None)
         users_data = validated_data.pop("user", None)
 
         # instance.title = validated_data.get('title', instance.title)

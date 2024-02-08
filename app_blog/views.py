@@ -99,7 +99,7 @@ class PostListListView(generics.ListAPIView):
     search_fields = ["hashtags__name"]
     serializer_class = PostListSerializer
     pagination_class = CustomPostPagination
-    permission_classes = [permissions.IsAuthenticated,]
+    permission_classes = [permissions.IsAuthenticated]
 
     
     def get_queryset(self):
@@ -123,7 +123,8 @@ class PostListDetailView(generics.RetrieveAPIView):
 
     
 #Admin
-class PostListCreateView(generics.CreateAPIView):
+class PostListCreateView(generics.ListCreateAPIView):
+    queryset = Post_list.objects.all()
     serializer_class = PostListSerializer
     permission_classes = [permissions.IsAdminUser]
 
@@ -166,7 +167,7 @@ class ModuleDetailView(generics.RetrieveAPIView):
 
 
 #Admin
-class ModuleCreateView(generics.CreateAPIView):
+class ModuleCreateView(generics.ListCreateAPIView):
     queryset = Module.objects.all()
     serializer_class = ModuleSerializer
     permission_classes = [permissions.IsAdminUser]
@@ -202,7 +203,7 @@ class ModuleRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
 
 # ==== Hashtag ===============================================================
 #User
-class HashtagListView(generics.ListCreateAPIView):
+class HashtagListView(generics.ListAPIView):
     queryset = Hashtag.objects.all()
     serializer_class = HashtagSerializer
     filter_backends = [SearchFilter]

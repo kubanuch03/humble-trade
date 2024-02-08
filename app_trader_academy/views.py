@@ -112,7 +112,7 @@ class QuestionRUDView(generics.RetrieveUpdateDestroyAPIView):
 
 
 # ===================================================================
-class UnitCreateView(generics.CreateAPIView):
+class UnitCreateView(generics.ListCreateAPIView):
     queryset = Unit.objects.all()
     serializer_class = TraderCourseSerializer
     permission_classes = [IsAdminUser,]
@@ -142,9 +142,13 @@ class LessonListApiView(generics.ListAPIView):
     serializer_class = LessonSerializer
     permission_classes = [permissions.IsAuthenticated]
 
+    def get_queryset(self):
+        user = self.request.user  # Получаем текущего пользователя
+        return Lesson.objects.filter(user=user)
 
 
-class LessonCreateApiView(generics.CreateAPIView):
+
+class LessonCreateApiView(generics.ListCreateAPIView):
     queryset = Lesson.objects.all()
     serializer_class = LessonSerializer
     permission_classes = [permissions.IsAuthenticated]

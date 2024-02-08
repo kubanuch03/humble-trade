@@ -15,7 +15,7 @@ from rest_framework import generics
 from rest_framework.permissions import AllowAny
 
 
-class CategoryCreateApiView(generics.CreateAPIView):
+class CategoryCreateApiView(generics.ListCreateAPIView):
     queryset = Category.objects.all()
     serializer_class = CategorySerializers
     pagination_class = CustomPageNumberPagination
@@ -88,7 +88,7 @@ class CategoryPutApiView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-class DocumentCreateApiView(generics.CreateAPIView):
+class DocumentCreateApiView(generics.ListCreateAPIView):
     queryset = Document.objects.all()
     serializer_class = DocumentSerializer
     pagination_class = CustomPageNumberPagination

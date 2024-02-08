@@ -69,26 +69,40 @@ class QuestionSerializer(serializers.ModelSerializer):
 class LessonSerializer(serializers.ModelSerializer):
     class Meta:
         model = Lesson
-        fields = ['id','unit','title','image','url',]
+        fields = ['id','unit','title','user','image','url',]
 
     @extend_schema_field(str)
     def get_post_title(self, obj):
         return obj.post.title if obj.post else None
-
     
+    def create(self, validated_data):
+        print("Validated data:", validated_data)
+        user_data = validated_data.pop("user", None)
+
+        lesson  = Lesson.objects.create(**validated_data)
+        print("Created lesson:", lesson)
+
+        if user_data:
+            lesson .user.set(user_data)
+
+        return lesson
 
         
 
-    # def update(self, instance, validated_data):
-    #     # Обновление основных полей
-    #     instance.title = validated_data.get('title', instance.title)
-    #     instance.image = validated_data.get('image', instance.image)
-    #     instance.url = validated_data.get('url', instance.url)
-    #     instance.unit = validated_data.get('unit', instance.unit)
+    def update(self, instance, validated_data):
+        users_data = validated_data.pop("user", None)
 
 
-    #     instance.save()
-    #     return instance
+        if users_data:
+            instance.user.set(users_data)
+
+   
+
+     
+  
+
+        instance.save()
+        return instance
 
 
 class StrategyCourseSerializer(serializers.ModelSerializer):

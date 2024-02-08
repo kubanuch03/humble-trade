@@ -14,7 +14,7 @@ class CommentListCreateView(generics.ListCreateAPIView):
 
     def get_queryset(self):
         post_list_id = self.kwargs["post_list_id"]
-        return Comment.objects.filter(post__id=post_list_id)
+        return Comment.objects.filter(post_list__id=post_list_id)
 
     def perform_create(self, serializer):
         user = self.request.user

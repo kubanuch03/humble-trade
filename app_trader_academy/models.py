@@ -13,9 +13,9 @@ class Unit(models.Model):
 
 class Lesson(models.Model):
     unit = models.ForeignKey(Unit, on_delete=models.CASCADE)
+    user = models.ManyToManyField(Client)
     title = models.CharField(max_length=250)
     image = models.ImageField(upload_to="trader_academy/lesson/")
-    instructor = models.ForeignKey(Client, on_delete=models.PROTECT,blank=True,null=True)
     url = models.URLField()
     
     #question = models.ForeignKey(

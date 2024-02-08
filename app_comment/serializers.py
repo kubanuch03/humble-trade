@@ -13,13 +13,8 @@ class CommentSerializer(serializers.ModelSerializer):
         return obj.user.avatar.url if obj.user.avatar else None
 
 
-    # @extend_schema_field(str)
-    # def get_username(self, obj):
-    #     return obj.user.username if obj.user else None
 
-    def get_id(self,obj):
-        return obj.id
 
     class Meta:
         model = Comment
-        fields = ['id', 'post', 'user', 'avatar_url', 'text', 'created_date']
+        fields = ['id', 'post_list', 'user', 'avatar_url', 'text', 'created_date']
