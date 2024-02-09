@@ -2,7 +2,6 @@ from django.db import models
 from app_video_library.models import Courses
 from app_resourse_center.models import Document
 from app_clients.models import Client
-from django.shortcuts import render
 
 
 class CommentCourse(models.Model):

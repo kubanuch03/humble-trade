@@ -178,7 +178,6 @@ class UnitLessonsListView(ListAPIView):
                     'id': lesson.id,
                     'title': lesson.title,
                     'image_url': lesson.image.url,
-                    'instructor_uername': lesson.instructor.username if lesson.instructor else None,
                     'url': lesson.url,
                 })
             return Response({'lessons': lesson_data})

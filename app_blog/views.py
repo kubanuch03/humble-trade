@@ -53,25 +53,7 @@ class PostCreateView(generics.CreateAPIView):
     serializer_class = PostSerializer
     permission_classes = [permissions.IsAdminUser]
 
-    # @extend_schema(
-    #     summary="Create a new blog post list",
-    #     description="Create a new blog post list",
-    #     request=PostSerializer,
-    #     responses={201: PostSerializer},
-    #     operation_id="blog_post_create_v1",
-    # )
-    # def create(self, request, *args, **kwargs):
-    #     title = request.data.get('title',).strip()
-    #     print(title)
-    #     if not title:
-    #         return JsonResponse({'error': 'Title не может быть пустым'}, status=status.HTTP_400_BAD_REQUEST)
-
-    #     slug = slugify(title)
-    #     if Post.objects.filter(slug=slug).exists():
-    #         return JsonResponse({'error': 'Post с таким заголовком уже существует. Пожалуйста, выберите другой заголовок.'}, status=status.HTTP_400_BAD_REQUEST)
-
-    #     request.data['slug'] = slug
-    #     return super().create(request, *args, **kwargs)
+   
 
 
 class PostRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):

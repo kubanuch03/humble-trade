@@ -5,23 +5,26 @@ from app_clients.models import Client
 
 
 class CommentCourseSerializer(serializers.ModelSerializer):
-    # user = serializers.StringRelatedField()
+    username = serializers.SerializerMethodField()
     avatar_url = serializers.SerializerMethodField()
 
-    # @extend_schema_field(str)
-    # def get_username(self, obj):
-    #     return obj.user.username if obj.user else None
+    @extend_schema_field(str)
+    def get_username(self, obj):
+        return obj.user.username if obj.user else None
 
     @extend_schema_field(str)
     def get_avatar_url(self, obj):
         return obj.user.avatar.url if obj.user.avatar else None
     
-    def get_id(self,obj):
-        return obj.id
+    
 
     class Meta:
         model = CommentCourse
-        fields = ["id", "user", "avatar_url", "post", "body", "created_at",]
+        fields = ["id", "user","username", "avatar_url", "post", "body", "created_at",]
+
+
+    
+
 
 
 class CommentDocumentSerializer(serializers.ModelSerializer):

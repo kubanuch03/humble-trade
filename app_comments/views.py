@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 
 
 
-
+#======== Course Comment ===================================================
 class CommentsListCreateView(generics.ListCreateAPIView):
     queryset = CommentCourse.objects.all()
     serializer_class = CommentCourseSerializer
@@ -26,6 +26,12 @@ class CommentsRUDView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = CommentCourseSerializer
     permission_classes = [permissions.IsAdminUser]
     
+
+
+
+
+
+#======== Course Comment ===================================================
 
 
 class CommentsDocumentViewSet(ModelViewSet):
