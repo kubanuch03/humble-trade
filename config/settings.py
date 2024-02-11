@@ -181,13 +181,13 @@ CORS_ALLOW_METHODS = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "http://3.143.210.222",
+    "https://aitim-trade-backend.net/",
     "http://localhost:3000",
 ]
 
 CORS_ALLOW_ORIGINS = [
-    "*",
-    "http://3.143.210.222",
+
+    "https://aitim-trade-backend.net/",
     "http://localhost:3000",
 ]
 CORS_ALLOW_HEADERS = [
