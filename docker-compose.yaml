@@ -10,6 +10,12 @@ services:
       - .:/app
       - static_volume:/usr/src/app/static
       - media_volume:/usr/src/app/media
+    # environment:
+    #   - DJANGO_SETTINGS_MODULE=config.settings.base
+    environment:
+      - VIRTUAL_HOST= aitim-trade-backend.net
+      - LETSENCRYPT_HOST = aitim-trade-backend.net
+      
     ports:
       - 8000:8000
     depends_on:
@@ -51,18 +57,35 @@ services:
       - db
 
   nginx:
-    build:
-      context: .
-      dockerfile: nginx/Dockerfile
+    image: jwilder/nginx-proxy:1.2
     ports:
-      - "80:80"
+    - "80:80"
+    - "443:443"
     volumes:
-      - static_volume:/usr/src/app/static
-      - media_volume:/usr/src/app/media
-    depends_on:
-      - web
+    - ./nginx/default2.conf:/etc/nginx/vhost.d/nginx.conf
+    - static_volume:/usr/src/app/static
+    - media_volume:/usr/src/app/media
+    - /var/run/docker.sock:/tmp/docker.sock:ro
+    - html:/usr/share/nginx/html
+    - vhost:/etc/nginx/vhost.d
+    - certs:/etc/nginx/certs
+
+  acme_companion:
+    image: nginxproxy/acme-companion:2.2.10
+    container_name: acme_companion
+    volumes_from:
+    - nginx
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    - acme:/etc/acme.sh
+
+
 
 volumes:
   dbdata:
   static_volume:
   media_volume:
+  certs:
+  acme:
+  vhost:
+  html:

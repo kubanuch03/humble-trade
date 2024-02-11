@@ -8,7 +8,5 @@ urlpatterns = [
     path("delete/client/<int:pk>/", ClientDeleteView.as_view(), name="delete_client"),
     path("register/client/", RegisterClientView.as_view(), name="register_client"),
     path("login/client/", LoginClientView.as_view(), name="login_client"),
-    path(
-        "confirm-email/<str:token>/", ConfirmEmailView.as_view(), name="confirm_email"
-    ),
+    path("confirm-email/<str:token>/", ConfirmEmailView.as_view(), name="confirm_email"),
 ]

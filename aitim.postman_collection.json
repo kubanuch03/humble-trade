@@ -1,0 +1,1709 @@
+{
+	"info": {
+		"_postman_id": "d25a4535-34f9-4a9c-a1ff-5d1ba3041e25",
+		"name": "aitim",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "20741463",
+		"_collection_link": "https://gold-meadow-776325.postman.co/workspace/aitim~75c48375-30e2-41a6-beef-7fc740d6f2c8/collection/20741463-d25a4535-34f9-4a9c-a1ff-5d1ba3041e25?action=share&source=collection_link&creator=20741463"
+	},
+	"item": [
+		{
+			"name": "app_clients/w",
+			"item": [
+				{
+					"name": "list/client/",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"strictSSL": false
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4NDQ0MTYwLCJpYXQiOjE3MDcyMzQ1NjAsImp0aSI6IjQ1NmYxY2E3ZjI0NzRmYmNiNDllZGE0YmNjMGIxM2Q1IiwidXNlcl9pZCI6MX0.9V-Y021CeqrrKjWXokx8nL-FpK1U-Sndk2yGWasaiyU"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}/clients/list/client/"
+					},
+					"response": []
+				},
+				{
+					"name": "login/client/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": ""
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"kubanuch03@gmail.com\",\r\n    \"password\":\"986532kk\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}/clients/login/client/"
+					},
+					"response": []
+				},
+				{
+					"name": "register/client/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4NDk0MjY1LCJpYXQiOjE3MDcyODQ2NjUsImp0aSI6IjZkYTgxYjJiZjFhNTQzY2Q5OTBiNWQzYmFmZjY3MGIzIiwidXNlcl9pZCI6MX0.mjckGigo1SQKgthTgFBkbCxz2jqAnF3VvRGR66tOdpM"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"kubanuch03@gmail.com\",\r\n    \"username\":\"kuba\",\r\n    \"password\":\"986532kk\",\r\n    \"password2\":\"986532kk\"\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}/clients/register/client/"
+					},
+					"response": []
+				},
+				{
+					"name": "delete/client/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA3MDI1MDY1LCJpYXQiOjE3MDU4MTU0NjUsImp0aSI6ImVhNWI3MjgwYTYyNzQ0MzViMzg5NWZhYzEyNDQ5ODE3IiwidXNlcl9pZCI6MX0.7hS-59BcvkAeV39zEj0nyOf6U5VVj70FAFNVDPRa378"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}/clients/delete/client/3/"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "app_settings/w",
+			"item": []
+		},
+		{
+			"name": "app_blog/w",
+			"item": [
+				{
+					"name": "posts/w",
+					"item": [
+						{
+							"name": "posts/list",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4NTI3MTkyLCJpYXQiOjE3MDczMTc1OTIsImp0aSI6ImUyNjQ5Nzk2YTcyZDQxOTViZTEwYThhMDhmMjE1YTYwIiwidXNlcl9pZCI6MX0.riEBusAHLP7sWX18mBq3If4pjZjXDo5zEQoGw45TnIc"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{url_aitim}}/blog/posts/list/"
+							},
+							"response": []
+						},
+						{
+							"name": "posts/create",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA3NDg0Mjk0LCJpYXQiOjE3MDYyNzQ2OTQsImp0aSI6ImQ4MGRlZDVhNjRmNTQwY2JhYTk4MzA1NGY4ZjVlMGE1IiwidXNlcl9pZCI6MX0._SJ6EdrGtEtMBIQhmNPOJS9aZvOA5T8HquDw_I4tv24"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"post1\",\r\n    \"content\": \"post1\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url_aitim}}/blog/posts/create/"
+							},
+							"response": []
+						},
+						{
+							"name": "posts/detail/id/",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true,
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA3NDg0Mjk0LCJpYXQiOjE3MDYyNzQ2OTQsImp0aSI6ImQ4MGRlZDVhNjRmNTQwY2JhYTk4MzA1NGY4ZjVlMGE1IiwidXNlcl9pZCI6MX0._SJ6EdrGtEtMBIQhmNPOJS9aZvOA5T8HquDw_I4tv24"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"Трайдерр\",\r\n    \"content\": \"Трайдер\",\r\n    \"visible_to_users\":[2,3]\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url_aitim}}/blog/posts/detail/2/"
+							},
+							"response": []
+						},
+						{
+							"name": "posts/rud/id/",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA3NDg0Mjk0LCJpYXQiOjE3MDYyNzQ2OTQsImp0aSI6ImQ4MGRlZDVhNjRmNTQwY2JhYTk4MzA1NGY4ZjVlMGE1IiwidXNlcl9pZCI6MX0._SJ6EdrGtEtMBIQhmNPOJS9aZvOA5T8HquDw_I4tv24"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"Трайдерр11\",\r\n    \"content\": \"Трайде1р\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url_aitim}}/blog/posts/rud/1/"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "post_list/w",
+					"item": [
+						{
+							"name": "post_lst/list/",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4NjA4NDI5LCJpYXQiOjE3MDczOTg4MjksImp0aSI6Ijg1YjMwODVkYzFkNDQ1ODM5NzFjNTlhNDU5YTljMGI3IiwidXNlcl9pZCI6Mn0.QiH08HZ95SFbeo3E1bWjybAb7o1uSiXMyhz5NBrvj6s"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{url}}/blog/post_lst/list/"
+							},
+							"response": []
+						},
+						{
+							"name": "post_lst/detail/id/",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4NjA2MzYzLCJpYXQiOjE3MDczOTY3NjMsImp0aSI6IjdhNjAxZGVlMTI3MTRiYzJhYTRiNDU4Mjk5ZDhlZWE4IiwidXNlcl9pZCI6MX0.apyZlG9jqsZ5T_6Q7H3x_FE8lT1W4w1QUphE5tSQNlw"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{url_aitim}}/blog/post_lst/detail/2/"
+							},
+							"response": []
+						},
+						{
+							"name": "post_lst/create/",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4NjA3Mzg4LCJpYXQiOjE3MDczOTc3ODgsImp0aSI6IjhlMjFiYTQxNmRmMDRiN2RiOWFhMDQ1YTcyZjg3ODU3IiwidXNlcl9pZCI6MX0.52lbMLlCRLX3UyNHOaekoh3cz3DG4cKFsKOlpom-vqI"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Заголовок вашего блога111111\",\r\n    \"description\": \"Содержание вашего блога\",\r\n    \"video\": \"https://gitlab.com/\",\r\n    \"post\": 1,\r\n    \"user\": [2],\r\n    \"hashtags\": [1]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url}}/blog/post_lst/create/"
+							},
+							"response": []
+						},
+						{
+							"name": "post_lst/rud/id/",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4NTg3OTQ3LCJpYXQiOjE3MDczNzgzNDcsImp0aSI6IjI2MTljNjhhOWY2YzRiNDdiNTBjM2JhMDlkZTgxOTEwIiwidXNlcl9pZCI6MX0.p_XuWTjoEeIMHqUyiisd0ZkhqQUemvIx9aB4cHNG3lg"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Your Title2112\",\r\n    \"description\": \"Your dddDescription\",\r\n    \"video\": \"https://www.example.com/video.mp4\",\r\n    \"post\": 1,\r\n    \"user\": [2],\r\n    \"hashtags\": [1,2]\r\n  \r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url}}/blog/post_lst/rud/12/"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "module/w",
+					"item": [
+						{
+							"name": "modules/list/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MTY5MDAxLCJpYXQiOjE3MDY5NTk0MDEsImp0aSI6ImQ5ZmYzMDY2YmU4MjRmYTdiNDQ3M2YwM2FjMjQ2YzlhIiwidXNlcl9pZCI6MX0.6uDdALYRKFZcfjOv543FDUQQE-93CKWBpKfRHaGj0-s"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{url}}/blog/modules/list/"
+							},
+							"response": []
+						},
+						{
+							"name": "modules/detail/id/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MTY5MDAxLCJpYXQiOjE3MDY5NTk0MDEsImp0aSI6ImQ5ZmYzMDY2YmU4MjRmYTdiNDQ3M2YwM2FjMjQ2YzlhIiwidXNlcl9pZCI6MX0.6uDdALYRKFZcfjOv543FDUQQE-93CKWBpKfRHaGj0-s"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{url}}/blog/modules/detail/12/"
+							},
+							"response": []
+						},
+						{
+							"name": "modules/create/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MTY5MDAxLCJpYXQiOjE3MDY5NTk0MDEsImp0aSI6ImQ5ZmYzMDY2YmU4MjRmYTdiNDQ3M2YwM2FjMjQ2YzlhIiwidXNlcl9pZCI6MX0.6uDdALYRKFZcfjOv543FDUQQE-93CKWBpKfRHaGj0-s"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "post_list",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "dfr",
+											"type": "text"
+										},
+										{
+											"key": "images",
+											"type": "file",
+											"src": "/C:/Users/Admin/Downloads/WgswBEK_kOQ.jpg"
+										}
+									]
+								},
+								"url": "{{url}}/blog/modules/create/"
+							},
+							"response": []
+						},
+						{
+							"name": "modules/rud/id/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MTY5MDAxLCJpYXQiOjE3MDY5NTk0MDEsImp0aSI6ImQ5ZmYzMDY2YmU4MjRmYTdiNDQ3M2YwM2FjMjQ2YzlhIiwidXNlcl9pZCI6MX0.6uDdALYRKFZcfjOv543FDUQQE-93CKWBpKfRHaGj0-s"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "wvq",
+											"type": "text"
+										},
+										{
+											"key": "images",
+											"type": "file",
+											"src": "/C:/Users/Admin/Downloads/сингапур (13).png"
+										},
+										{
+											"key": "post_list",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": "{{url}}/blog/modules/rud/12/"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "hashtag/w/s",
+					"item": [
+						{
+							"name": "/hashtags/list/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA3NDg0Mjk0LCJpYXQiOjE3MDYyNzQ2OTQsImp0aSI6ImQ4MGRlZDVhNjRmNTQwY2JhYTk4MzA1NGY4ZjVlMGE1IiwidXNlcl9pZCI6MX0._SJ6EdrGtEtMBIQhmNPOJS9aZvOA5T8HquDw_I4tv24"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{url_aitim}}/blog/hashtags/list"
+							},
+							"response": []
+						},
+						{
+							"name": "/hashtags/detail/id/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA3NDg0Mjk0LCJpYXQiOjE3MDYyNzQ2OTQsImp0aSI6ImQ4MGRlZDVhNjRmNTQwY2JhYTk4MzA1NGY4ZjVlMGE1IiwidXNlcl9pZCI6MX0._SJ6EdrGtEtMBIQhmNPOJS9aZvOA5T8HquDw_I4tv24"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{url_aitim}}/blog/hashtags/detail/1/"
+							},
+							"response": []
+						},
+						{
+							"name": "/hashtags/rud/id/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA3NDg0Mjk0LCJpYXQiOjE3MDYyNzQ2OTQsImp0aSI6ImQ4MGRlZDVhNjRmNTQwY2JhYTk4MzA1NGY4ZjVlMGE1IiwidXNlcl9pZCI6MX0._SJ6EdrGtEtMBIQhmNPOJS9aZvOA5T8HquDw_I4tv24"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"h111\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url_aitim}}/blog/hashtags/rud/1/"
+							},
+							"response": []
+						},
+						{
+							"name": "/hashtags/create/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA3NDg0Mjk0LCJpYXQiOjE3MDYyNzQ2OTQsImp0aSI6ImQ4MGRlZDVhNjRmNTQwY2JhYTk4MzA1NGY4ZjVlMGE1IiwidXNlcl9pZCI6MX0._SJ6EdrGtEtMBIQhmNPOJS9aZvOA5T8HquDw_I4tv24"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"h2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url_aitim}}/blog/hashtags/create/"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "app_review/w",
+			"item": [
+				{
+					"name": "reviews/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA3MDI2Njc4LCJpYXQiOjE3MDU4MTcwNzgsImp0aSI6ImEzZDQ4NmVhY2NlMTRlZmZiZjhlMjkzOTQ0NzVjZWU4IiwidXNlcl9pZCI6NH0.LIqV49me9vGZN53kOJ4z3ly3wX29OXMFSMU9Ih5F4SI"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"client\":4,\r\n    \"text\":\"kuba\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}/reviews/reviews/"
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{url}}/reviews/reviews/"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "app_trader_academy/w",
+			"item": [
+				{
+					"name": "question/w",
+					"item": [
+						{
+							"name": "question/create/lesson/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA3NDg0Mjk0LCJpYXQiOjE3MDYyNzQ2OTQsImp0aSI6ImQ4MGRlZDVhNjRmNTQwY2JhYTk4MzA1NGY4ZjVlMGE1IiwidXNlcl9pZCI6MX0._SJ6EdrGtEtMBIQhmNPOJS9aZvOA5T8HquDw_I4tv24"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\r\n{\r\n    \"lesson\": 1,\r\n    \"question\": \"Какой-то вопрос?33\",\r\n    \"options\": [\r\n        {\"answer_text\": \"Вариант 221\"},\r\n        {\"answer_text\": \"Вариант 232\"},\r\n        {\"answer_text\": \"Вариант 423\"},\r\n        {\"answer_text\": \"Вариант 254\"}\r\n    ],\r\n    \"correct_answer\": 4\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url}}/trader/academy/questions/create/lesson/"
+							},
+							"response": []
+						},
+						{
+							"name": "questions/list/lesson/",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA3NDg0Mjk0LCJpYXQiOjE3MDYyNzQ2OTQsImp0aSI6ImQ4MGRlZDVhNjRmNTQwY2JhYTk4MzA1NGY4ZjVlMGE1IiwidXNlcl9pZCI6MX0._SJ6EdrGtEtMBIQhmNPOJS9aZvOA5T8HquDw_I4tv24"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url_aitim}}/trader/academy/questions/list/lesson/"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "lesson/w",
+					"item": [
+						{
+							"name": "lesson/list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4NjE3Njk0LCJpYXQiOjE3MDc0MDgwOTQsImp0aSI6ImMzNWNjMDE1ZDdmZjRhYTRiMmYxNWY5YjNkZTY5NDBjIiwidXNlcl9pZCI6Mn0.ADTt0LzqFMwz9WHPiiz4VjXxIxqab9YlZe905B0kbXQ"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": "{{url}}/trader/academy/lesson/list/"
+							},
+							"response": []
+						},
+						{
+							"name": "lesson/detail/id/",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4NDk0MzEwLCJpYXQiOjE3MDcyODQ3MTAsImp0aSI6ImIxNjc5YThlMGU2NjQyYmE4MWQ4YmMyNGZiNTc4ODI1IiwidXNlcl9pZCI6N30.R1AbySaMeFh2PUplhHVgyUVoWBRcttgkpQyt3imiIDU"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": "{{url}}/trader/academy/lesson/rud/1/"
+							},
+							"response": []
+						},
+						{
+							"name": "lesson/rud/id/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MzU0MDQwLCJpYXQiOjE3MDcxNDQ0NDAsImp0aSI6ImFiYzVjNmE4MjY1OTRiNWE5ZTk3ODc1OGE4NzcwMDU2IiwidXNlcl9pZCI6MX0.sqV3aHr01aC0W9NArx7T4AzXrFnUc5yfJrEhxLrlJhY"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "unit",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "url",
+											"value": "https://chat.openai.com/c/3fd5842c-bc76-46e6-a973-60b5c0aa6dc8",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "PUT",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/Admin/Downloads/WgswBEK_kOQ.jpg",
+											"disabled": true
+										},
+										{
+											"key": "question",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "visible_to_users_since",
+											"value": "2024-02-06",
+											"type": "text"
+										},
+										{
+											"key": "visible_to_users",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": "{{url}}/trader/academy/lesson/rud/2/"
+							},
+							"response": []
+						},
+						{
+							"name": "lesson/create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MzU0MDQwLCJpYXQiOjE3MDcxNDQ0NDAsImp0aSI6ImFiYzVjNmE4MjY1OTRiNWE5ZTk3ODc1OGE4NzcwMDU2IiwidXNlcl9pZCI6MX0.sqV3aHr01aC0W9NArx7T4AzXrFnUc5yfJrEhxLrlJhY"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "unit",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "url",
+											"value": "https://chat.openai.com/c/3fd5842c-bc76-46e6-a973-60b5c0aa6dc8",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "efrvfcwecwefwef",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": [
+												"/C:/Users/Admin/Downloads/WgswBEK_kOQ.jpg",
+												"/C:/Users/Admin/Downloads/сингапур (13).png"
+											]
+										},
+										{
+											"key": "question",
+											"value": "1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "user",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "user",
+											"value": "3",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": "{{url}}/trader/academy/lesson/create/"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "unit/w",
+					"item": [
+						{
+							"name": "unit/list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MzUwMjMyLCJpYXQiOjE3MDcxNDA2MzIsImp0aSI6IjgyM2ZiYmM4ZDU1MTQ4N2U5YWYzMDYyNDFhYTA5OWYwIiwidXNlcl9pZCI6MX0.bl55-8DqQHcPsmJv5c0QU4ZbERQJW5QYevKtqSs4k2k"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://3.143.210.222/trader/academy/unit/list/"
+							},
+							"response": []
+						},
+						{
+							"name": "unit/create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MzUxMzAzLCJpYXQiOjE3MDcxNDE3MDMsImp0aSI6IjhjZDBlNDNmOTk4MzRhMmFhMDUyMWYzY2VhNDU1N2ZkIiwidXNlcl9pZCI6MX0.lIZNh-Ta2yIEDasKgjVgKdra9mC19h7HZJbM298c2jU"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "wqrgrqeger",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/Admin/Downloads/WgswBEK_kOQ.jpg"
+										}
+									]
+								},
+								"url": "http://3.143.210.222/trader/academy/unit/create/"
+							},
+							"response": []
+						},
+						{
+							"name": "unit/rud/id/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MzQyMjk2LCJpYXQiOjE3MDcxMzI2OTYsImp0aSI6Ijg1NzE5YzI4ZTg2ZTQ2MDhhNjZhMGNlYWEyNzIyZDY2IiwidXNlcl9pZCI6MX0.nOwhFlR-PI6hR3yCIKA53gaOhDHIOXZShtrY9UrtPDs"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "rtb5ynwretb",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": [
+												"/C:/Users/Admin/Pictures/Screenshots/Снимок экрана 2023-12-29 094602.png",
+												"/C:/Users/Admin/Downloads/WgswBEK_kOQ.jpg"
+											]
+										}
+									]
+								},
+								"url": "http://3.143.210.222/trader/academy/unit/"
+							},
+							"response": []
+						},
+						{
+							"name": "unit/lessin/id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MzUzNTEwLCJpYXQiOjE3MDcxNDM5MTAsImp0aSI6ImNhZjMwNDc4ODRjMzQxZDZhZWZhNzUxODRkNTllYTM1IiwidXNlcl9pZCI6NH0.lTQT8cBt7Hw2gC_FWnK8k8YSLrKzI6546ttWL3QlNZw"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://3.143.210.222/trader/academy/unit/lessons/5/"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "strategy lesson/w",
+					"item": [
+						{
+							"name": "strategy/course",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MTY5MDAxLCJpYXQiOjE3MDY5NTk0MDEsImp0aSI6ImQ5ZmYzMDY2YmU4MjRmYTdiNDQ3M2YwM2FjMjQ2YzlhIiwidXNlcl9pZCI6MX0.6uDdALYRKFZcfjOv543FDUQQE-93CKWBpKfRHaGj0-s"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "pot",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": [
+												"/C:/Users/Admin/Pictures/Screenshots/Снимок экрана 2023-12-29 094602.png",
+												"/C:/Users/Admin/Downloads/сингапур (13).png"
+											]
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/trader/academy/strategy/course/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"trader",
+										"academy",
+										"strategy",
+										"course",
+										""
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "vewb",
+											"disabled": true
+										},
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "strategy/lesson",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MTY5MDAxLCJpYXQiOjE3MDY5NTk0MDEsImp0aSI6ImQ5ZmYzMDY2YmU4MjRmYTdiNDQ3M2YwM2FjMjQ2YzlhIiwidXNlcl9pZCI6MX0.6uDdALYRKFZcfjOv543FDUQQE-93CKWBpKfRHaGj0-s"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "veqtrbcref",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": [
+												"/C:/Users/Admin/Pictures/Screenshots/Снимок экрана 2023-12-29 094602.png",
+												"/C:/Users/Admin/Downloads/White Orange Creative Photocentric Open Trip Instagram Post (1).png"
+											]
+										},
+										{
+											"key": "course",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "instructor",
+											"value": "2",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": "{{url}}/trader/academy/strategy/lesson/1/"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "app_video_library/w",
+			"item": [
+				{
+					"name": "category/w",
+					"item": [
+						{
+							"name": "category",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MTY5MDAxLCJpYXQiOjE3MDY5NTk0MDEsImp0aSI6ImQ5ZmYzMDY2YmU4MjRmYTdiNDQ3M2YwM2FjMjQ2YzlhIiwidXNlcl9pZCI6MX0.6uDdALYRKFZcfjOv543FDUQQE-93CKWBpKfRHaGj0-s"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "CrEATE",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "CREATE",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": [
+												"/C:/Users/Admin/Pictures/Screenshots/Снимок экрана 2023-12-29 094602.png",
+												"/C:/Users/Admin/Downloads/сингапур (13).png"
+											]
+										}
+									]
+								},
+								"url": "{{url}}/video/library/category/"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "course/w",
+					"item": [
+						{
+							"name": "course/list/",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MTY5MDAxLCJpYXQiOjE3MDY5NTk0MDEsImp0aSI6ImQ5ZmYzMDY2YmU4MjRmYTdiNDQ3M2YwM2FjMjQ2YzlhIiwidXNlcl9pZCI6MX0.6uDdALYRKFZcfjOv543FDUQQE-93CKWBpKfRHaGj0-s"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url}}/video/library/course/list/"
+							},
+							"response": []
+						},
+						{
+							"name": "course/list/create/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MTY5MDAxLCJpYXQiOjE3MDY5NTk0MDEsImp0aSI6ImQ5ZmYzMDY2YmU4MjRmYTdiNDQ3M2YwM2FjMjQ2YzlhIiwidXNlcl9pZCI6MX0.6uDdALYRKFZcfjOv543FDUQQE-93CKWBpKfRHaGj0-s"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "category",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "rvetb5y",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": [
+												"/C:/Users/Admin/Pictures/Screenshots/Снимок экрана 2023-12-29 094602.png",
+												"/C:/Users/Admin/Downloads/сингапур (13).png"
+											]
+										},
+										{
+											"key": "url",
+											"value": "https://www.youtube.com/watch?v=phlsVGysQSw&t=169s",
+											"type": "text"
+										}
+									]
+								},
+								"url": "{{url}}/video/library/course/create/"
+							},
+							"response": []
+						},
+						{
+							"name": "course/list/detail/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MTY5MDAxLCJpYXQiOjE3MDY5NTk0MDEsImp0aSI6ImQ5ZmYzMDY2YmU4MjRmYTdiNDQ3M2YwM2FjMjQ2YzlhIiwidXNlcl9pZCI6MX0.6uDdALYRKFZcfjOv543FDUQQE-93CKWBpKfRHaGj0-s"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{url}}/video/library/course/detail/1/"
+							},
+							"response": []
+						},
+						{
+							"name": "course/list/rud/id/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MTY5MDAxLCJpYXQiOjE3MDY5NTk0MDEsImp0aSI6ImQ5ZmYzMDY2YmU4MjRmYTdiNDQ3M2YwM2FjMjQ2YzlhIiwidXNlcl9pZCI6MX0.6uDdALYRKFZcfjOv543FDUQQE-93CKWBpKfRHaGj0-s"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "category",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "PUT",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/Admin/Downloads/White Orange Creative Photocentric Open Trip Instagram Post (1).png"
+										},
+										{
+											"key": "url",
+											"value": "https://www.youtube.com/watch?v=phlsVGysQSw&t=169s",
+											"type": "text"
+										}
+									]
+								},
+								"url": "{{url}}/video/library/course/rud/1/"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "app_comment/w",
+			"item": [
+				{
+					"name": "post_lists/comments/",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4NjE1Mjc2LCJpYXQiOjE3MDc0MDU2NzYsImp0aSI6IjFmNzBlYzI3YjBkNTQ1NWVhNTJjYjdjMTY3MWRmOGVkIiwidXNlcl9pZCI6Mn0.v0MMn7dCBlAP8iqmz_cJvo9UgsA7-VJbYK22-SJ5drM"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"post_list\":1,\r\n    \"text\":\"POST2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}/comment/post_lists/1/comments/"
+					},
+					"response": []
+				},
+				{
+					"name": "post_lists/rud/comments/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4NTk2NzM1LCJpYXQiOjE3MDczODcxMzUsImp0aSI6ImE4OGEwNjk0OTJkNzQ0MGVhNzVlMGQ3ODBmYjA5MjhhIiwidXNlcl9pZCI6MX0.ny6WX59Zzf5QAOauAm3rPkznG4LzL4M4-Eigf8p5D8s"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"post\": 1,\r\n    \"text\": \"PPOST\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}/comment/post_lists/rud/comments/1/"
+					},
+					"response": []
+				},
+				{
+					"name": "post_lists/detail/id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA3NDg0Mjk0LCJpYXQiOjE3MDYyNzQ2OTQsImp0aSI6ImQ4MGRlZDVhNjRmNTQwY2JhYTk4MzA1NGY4ZjVlMGE1IiwidXNlcl9pZCI6MX0._SJ6EdrGtEtMBIQhmNPOJS9aZvOA5T8HquDw_I4tv24"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"post\": 1,\r\n    \"text\": \"rvlcewk\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}/comment/post_lists/detail/2/"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "app_comments/w",
+			"item": [
+				{
+					"name": "resourse/center",
+					"item": [
+						{
+							"name": "resourse/center/document/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MTY5MDAxLCJpYXQiOjE3MDY5NTk0MDEsImp0aSI6ImQ5ZmYzMDY2YmU4MjRmYTdiNDQ3M2YwM2FjMjQ2YzlhIiwidXNlcl9pZCI6MX0.6uDdALYRKFZcfjOv543FDUQQE-93CKWBpKfRHaGj0-s"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user\":2,\r\n    \"post\":1,\r\n    \"body\":\"PUT\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url}}/comments/resourse/center/document/1/"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "video/library",
+					"item": [
+						{
+							"name": "video/library/create/list/comment/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4NTk2NzM1LCJpYXQiOjE3MDczODcxMzUsImp0aSI6ImE4OGEwNjk0OTJkNzQ0MGVhNzVlMGQ3ODBmYjA5MjhhIiwidXNlcl9pZCI6MX0.ny6WX59Zzf5QAOauAm3rPkznG4LzL4M4-Eigf8p5D8s"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user\":2,\r\n    \"post\":1,\r\n    \"body\":\"Comment Course\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url}}/comments/video/library/create/list/comment/"
+							},
+							"response": []
+						},
+						{
+							"name": "video/library/rud/comment",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4NTk2NzM1LCJpYXQiOjE3MDczODcxMzUsImp0aSI6ImE4OGEwNjk0OTJkNzQ0MGVhNzVlMGQ3ODBmYjA5MjhhIiwidXNlcl9pZCI6MX0.ny6WX59Zzf5QAOauAm3rPkznG4LzL4M4-Eigf8p5D8s"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user\":2,\r\n    \"post\":1,\r\n    \"body\":\"PUT\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url}}/comments/video/library/rud/comment/2/"
+							},
+							"response": []
+						},
+						{
+							"name": "course/comments/id/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4NTk2NzM1LCJpYXQiOjE3MDczODcxMzUsImp0aSI6ImE4OGEwNjk0OTJkNzQ0MGVhNzVlMGQ3ODBmYjA5MjhhIiwidXNlcl9pZCI6MX0.ny6WX59Zzf5QAOauAm3rPkznG4LzL4M4-Eigf8p5D8s"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{url}}/comments/course/comments/1/"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "document/comments",
+					"item": [
+						{
+							"name": "document/comments/id/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4NTk2NzM1LCJpYXQiOjE3MDczODcxMzUsImp0aSI6ImE4OGEwNjk0OTJkNzQ0MGVhNzVlMGQ3ODBmYjA5MjhhIiwidXNlcl9pZCI6MX0.ny6WX59Zzf5QAOauAm3rPkznG4LzL4M4-Eigf8p5D8s"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{url}}/comments/document/comments/1/"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "app_resource_center",
+			"item": [
+				{
+					"name": "category/w",
+					"item": [
+						{
+							"name": "category/create/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MTY5MDAxLCJpYXQiOjE3MDY5NTk0MDEsImp0aSI6ImQ5ZmYzMDY2YmU4MjRmYTdiNDQ3M2YwM2FjMjQ2YzlhIiwidXNlcl9pZCI6MX0.6uDdALYRKFZcfjOv543FDUQQE-93CKWBpKfRHaGj0-s"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "ошкмтшимшошмтшкл3отауаrrg4tv",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/Admin/Pictures/Screenshots/Снимок экрана 2023-12-29 094602.png"
+										}
+									]
+								},
+								"url": "{{url}}/recours/center/category/create/"
+							},
+							"response": []
+						},
+						{
+							"name": "category/list/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MTY5MDAxLCJpYXQiOjE3MDY5NTk0MDEsImp0aSI6ImQ5ZmYzMDY2YmU4MjRmYTdiNDQ3M2YwM2FjMjQ2YzlhIiwidXNlcl9pZCI6MX0.6uDdALYRKFZcfjOv543FDUQQE-93CKWBpKfRHaGj0-s"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{url}}/recours/center/category/list/"
+							},
+							"response": []
+						},
+						{
+							"name": "category/detail/id/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MTY5MDAxLCJpYXQiOjE3MDY5NTk0MDEsImp0aSI6ImQ5ZmYzMDY2YmU4MjRmYTdiNDQ3M2YwM2FjMjQ2YzlhIiwidXNlcl9pZCI6MX0.6uDdALYRKFZcfjOv543FDUQQE-93CKWBpKfRHaGj0-s"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{url}}/recours/center/category/list/"
+							},
+							"response": []
+						},
+						{
+							"name": "category/put/id/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MTY5MDAxLCJpYXQiOjE3MDY5NTk0MDEsImp0aSI6ImQ5ZmYzMDY2YmU4MjRmYTdiNDQ3M2YwM2FjMjQ2YzlhIiwidXNlcl9pZCI6MX0.6uDdALYRKFZcfjOv543FDUQQE-93CKWBpKfRHaGj0-s"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "ошкмтшимшошмтшкл3отауаrrg4tv",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/Admin/Pictures/Screenshots/Снимок экрана 2023-12-29 094602.png"
+										}
+									]
+								},
+								"url": "{{url}}/recours/center/category/create/"
+							},
+							"response": []
+						},
+						{
+							"name": "category/rud/id/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MTY5MDAxLCJpYXQiOjE3MDY5NTk0MDEsImp0aSI6ImQ5ZmYzMDY2YmU4MjRmYTdiNDQ3M2YwM2FjMjQ2YzlhIiwidXNlcl9pZCI6MX0.6uDdALYRKFZcfjOv543FDUQQE-93CKWBpKfRHaGj0-s"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": "{{url}}/recours/center/category/delete/1/"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "document",
+					"item": [
+						{
+							"name": "document/create/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MTY5MDAxLCJpYXQiOjE3MDY5NTk0MDEsImp0aSI6ImQ5ZmYzMDY2YmU4MjRmYTdiNDQ3M2YwM2FjMjQ2YzlhIiwidXNlcl9pZCI6MX0.6uDdALYRKFZcfjOv543FDUQQE-93CKWBpKfRHaGj0-s"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "reqv3rg4th5y7tbw",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/Admin/Pictures/Screenshots/Снимок экрана 2023-12-29 094602.png"
+										},
+										{
+											"key": "post",
+											"type": "file",
+											"src": "/C:/Users/Admin/Downloads/blank-rezume-7.doc"
+										},
+										{
+											"key": "url",
+											"value": "https://www.django-rest-framework.org/api-guide/views/",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "3rgtbq4",
+											"type": "text"
+										}
+									]
+								},
+								"url": "{{url}}/recours/center/document/create/"
+							},
+							"response": []
+						},
+						{
+							"name": "document/list/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MTY5MDAxLCJpYXQiOjE3MDY5NTk0MDEsImp0aSI6ImQ5ZmYzMDY2YmU4MjRmYTdiNDQ3M2YwM2FjMjQ2YzlhIiwidXNlcl9pZCI6MX0.6uDdALYRKFZcfjOv543FDUQQE-93CKWBpKfRHaGj0-s"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{url}}/recours/center/document/list/"
+							},
+							"response": []
+						},
+						{
+							"name": "document/delete/id/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MTY5MDAxLCJpYXQiOjE3MDY5NTk0MDEsImp0aSI6ImQ5ZmYzMDY2YmU4MjRmYTdiNDQ3M2YwM2FjMjQ2YzlhIiwidXNlcl9pZCI6MX0.6uDdALYRKFZcfjOv543FDUQQE-93CKWBpKfRHaGj0-s"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "reqv3rg4th5y7tbw",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/Admin/Pictures/Screenshots/Снимок экрана 2023-12-29 094602.png"
+										},
+										{
+											"key": "post",
+											"type": "file",
+											"src": "/C:/Users/Admin/Downloads/blank-rezume-7.doc"
+										},
+										{
+											"key": "url",
+											"value": "https://www.django-rest-framework.org/api-guide/views/",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "3rgtbq4",
+											"type": "text"
+										}
+									]
+								},
+								"url": "{{url}}/recours/center/document/delete/1/"
+							},
+							"response": []
+						},
+						{
+							"name": "document/put/id/",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MTY5MDAxLCJpYXQiOjE3MDY5NTk0MDEsImp0aSI6ImQ5ZmYzMDY2YmU4MjRmYTdiNDQ3M2YwM2FjMjQ2YzlhIiwidXNlcl9pZCI6MX0.6uDdALYRKFZcfjOv543FDUQQE-93CKWBpKfRHaGj0-s"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "reqv3rg4th5y7tbw",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/Admin/Pictures/Screenshots/Снимок экрана 2023-12-29 094602.png"
+										},
+										{
+											"key": "post",
+											"type": "file",
+											"src": "/C:/Users/Admin/Downloads/blank-rezume-7.doc"
+										},
+										{
+											"key": "url",
+											"value": "https://www.django-rest-framework.org/api-guide/views/",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "3rgtbq4",
+											"type": "text"
+										}
+									]
+								},
+								"url": "{{url}}/recours/center/document/create/"
+							},
+							"response": []
+						},
+						{
+							"name": "document/download/id/",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MTY5MDAxLCJpYXQiOjE3MDY5NTk0MDEsImp0aSI6ImQ5ZmYzMDY2YmU4MjRmYTdiNDQ3M2YwM2FjMjQ2YzlhIiwidXNlcl9pZCI6MX0.6uDdALYRKFZcfjOv543FDUQQE-93CKWBpKfRHaGj0-s"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "reqv3rg4th5y7tbw",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/Admin/Pictures/Screenshots/Снимок экрана 2023-12-29 094602.png"
+										},
+										{
+											"key": "post",
+											"type": "file",
+											"src": "/C:/Users/Admin/Downloads/blank-rezume-7.doc"
+										},
+										{
+											"key": "url",
+											"value": "https://www.django-rest-framework.org/api-guide/views/",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "3rgtbq4",
+											"type": "text"
+										}
+									]
+								},
+								"url": "{{url}}/recours/center/download/1/"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

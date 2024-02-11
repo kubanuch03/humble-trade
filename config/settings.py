@@ -183,10 +183,6 @@ CORS_ALLOW_METHODS = [
 CORS_ALLOWED_ORIGINS = [
     "http://3.143.210.222",
     "http://localhost:3000",
-    "https://dev.d1bfpcy724oex4.amplifyapp.com",
-    "https://dev.d1bfpcy724oex4.amplifyapp",
-    "https://dev.d1bfpcy724oex4",
-    "https://d1bfpcy724oex4",
 ]
 
 CORS_ALLOW_ORIGINS = [
@@ -255,3 +251,7 @@ LOGGING = {
 
 REDIS_HOST = "redis"
 REDIS_PORT = 6379
+
+
+CSRF_USE_SESSIONS = True
+CSRF_TRUSTED_ORIGINS = ["https://aitim-trade-backend.net"]

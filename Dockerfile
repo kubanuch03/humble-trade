@@ -12,8 +12,7 @@ WORKDIR /app
 COPY requirement.txt /app/
 
 # Install dependencies
-RUN pip install gunicorn
-RUN pip install --no-cache-dir -r requirement.txt
+RUN pip install  gunicorn --no-cache-dir && pip install --no-cache-dir -r requirement.txt
 
 
 # Обновление пакетов и установка Redis
