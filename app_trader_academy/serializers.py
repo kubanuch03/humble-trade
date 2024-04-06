@@ -6,6 +6,7 @@ from django.db.models import Max
 
 from drf_spectacular.utils import extend_schema_field
 
+import logging
 
 class TraderCourseSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField(read_only=True)
@@ -22,6 +23,7 @@ class AnswerSerializer(serializers.ModelSerializer):
             "id",
             "answer_number",
             "answer_text",
+            "is_correct",
         ]
 
     def create(self, validated_data):
@@ -64,6 +66,14 @@ class QuestionSerializer(serializers.ModelSerializer):
             question.save()
 
         return question
+    
+    def update(self, instance, validated_data):
+        instance.question = validated_data.get('question', instance.question)
+        instance.correct_answer = validated_data.get('correct_answer', instance.correct_answer)
+        instance.lesson = validated_data.get('lesson', instance.lesson)
+
+        instance.save()
+        return instance
 
 
 class LessonSerializer(serializers.ModelSerializer):
@@ -94,11 +104,7 @@ class LessonSerializer(serializers.ModelSerializer):
 
 
         if users_data:
-            instance.user.set(users_data)
-
-   
-
-     
+            instance.user.set(users_data)    
   
 
         instance.save()

@@ -74,29 +74,17 @@ class QuestionRUDView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = QuestionSerializer
     permission_classes = [permissions.IsAdminUser]
 
-    @extend_schema(
-        summary="Question Admin Update",
-        description="Question Admin Update",
-        request=QuestionSerializer,
-        responses={200: QuestionSerializer},
-        operation_id="question_admin_rud_put",
-    )
-    def put(self, request, *args, **kwargs):
-        instance = self.get_object()
-        serializer = self.get_serializer(instance)
-        return Response(serializer.data)
+
 
     @extend_schema(
         summary="Question Admin Delete",
         description="Question Admin Delete",
         request=QuestionSerializer,
-        responses={200: QuestionSerializer},
+        responses={204: None},
         operation_id="question_admin_rud_delete",
     )
     def delete(self, request, *args, **kwargs):
-        instance = self.get_object()
-        serializer = self.get_serializer(instance)
-        return Response(serializer.data)
+        return super().delete(request, *args, **kwargs)
 
     @extend_schema(
         summary="Question Admin Detail",

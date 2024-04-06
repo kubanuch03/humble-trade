@@ -68,10 +68,10 @@ class PostListSerializer(serializers.ModelSerializer):
         hashtags_data = validated_data.pop("hashtags",None)
         users_data = validated_data.pop("user", None)
 
-        # instance.title = validated_data.get('title', instance.title)
-        # instance.description = validated_data.get('description', instance.description)
-        # instance.video = validated_data.get('video', instance.video)
-        # instance.post = validated_data.get('post', instance.post)
+        instance.title = validated_data.get('title', instance.title)
+        instance.description = validated_data.get('description', instance.description)
+        instance.video = validated_data.get('video', instance.video)
+        instance.post = validated_data.get('post', instance.post)
 
         if users_data:
             instance.user.set(users_data)

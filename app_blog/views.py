@@ -17,7 +17,6 @@ from rest_framework import status
 
 from drf_spectacular.utils import extend_schema
 
-from transliterate import slugify
 
 
 

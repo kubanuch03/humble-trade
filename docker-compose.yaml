@@ -13,8 +13,8 @@ services:
     # environment:
     #   - DJANGO_SETTINGS_MODULE=config.settings.base
     environment:
-      - VIRTUAL_HOST= aitim-trade-backend.net
-      - LETSENCRYPT_HOST = aitim-trade-backend.net
+      - VIRTUAL_HOST=aitim-trade-backend.net
+      - LETSENCRYPT_HOST=aitim-trade-backend.net
       
     ports:
       - 8000:8000
@@ -62,7 +62,7 @@ services:
     - "80:80"
     - "443:443"
     volumes:
-    - ./nginx/default2.conf:/etc/nginx/vhost.d/nginx.conf
+    - ./nginx/default.conf:/etc/nginx/vhost.d/nginx.conf
     - static_volume:/usr/src/app/static
     - media_volume:/usr/src/app/media
     - /var/run/docker.sock:/tmp/docker.sock:ro

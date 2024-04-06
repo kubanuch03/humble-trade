@@ -23,8 +23,11 @@ from drf_spectacular.views import (
     SpectacularRedocView,
     SpectacularSwaggerView,
 )
+from .views import index
 
 urlpatterns = [
+    path('', index, name='index'),
+
     path("admin/", admin.site.urls),
     path("clients/", include("app_clients.urls")),
     path("settings/", include("app_settings.urls")),
@@ -37,7 +40,7 @@ urlpatterns = [
     path("reviews/", include("app_reviews.urls")),
     # swagger
     path("api/schema/", SpectacularAPIView.as_view(), name="schema"),
-    path("", SpectacularSwaggerView.as_view(url_name="schema"), name="swagger-ui"),
+    path("swagger-ui/", SpectacularSwaggerView.as_view(url_name="schema"), name="swagger-ui"),
     path(
         "api/schema/redoc/",
         SpectacularRedocView.as_view(url_name="schema"),
